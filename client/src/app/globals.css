@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #0b192c;
+  --color-brand-navy-dark: #070f1e;
+  --color-brand-blue: #0066ff;
+  --color-brand-blue-hover: #0055e6;
+  --color-brand-cyan: #00c2ff;
+  --color-brand-gold: #ffb703;
+  --color-brand-gold-hover: #d99b00;
+  
+  --color-accent: #ffb703;
+  --color-accent-hover: #d99b00;
+
+  --color-background: #f8fafc;
+  --color-foreground: #0b192c;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), sans-serif;
+  }
+}
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll {
+    animation: scroll-left 20s linear infinite;
+  }
+}
